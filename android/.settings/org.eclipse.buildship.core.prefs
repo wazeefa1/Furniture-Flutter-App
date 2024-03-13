@@ -1,0 +1,13 @@
+arguments=--init-script /var/folders/25/98_d0nbd48bddgnc22v1kgqh0000gn/T/init11692646049662249497.gradle --init-script /var/folders/25/98_d0nbd48bddgnc22v1kgqh0000gn/T/init358064842337769643.gradle
+auto.sync=false
+build.scans.enabled=false
+connection.gradle.distribution=GRADLE_DISTRIBUTION(WRAPPER)
+connection.project.dir=
+eclipse.preferences.version=1
+gradle.user.home=
+java.home=/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+jvm.arguments=
+offline.mode=false
+override.workspace.settings=true
+show.console.view=true
+show.executions.view=true
