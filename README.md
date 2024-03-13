@@ -1,2 +1,2 @@
-# amazcart_app
+# Ezviz Flutter App
 
