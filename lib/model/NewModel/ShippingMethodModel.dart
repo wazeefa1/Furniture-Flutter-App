@@ -83,7 +83,7 @@ class Shipping {
         createdAt: json["created_at"] == null
             ? null
             : DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
+        updatedAt:json["updated_at"]!=null?DateTime.parse(json["updated_at"]):null,
         carrier:json["carrier"] == null ? null : Carrier.fromJson(json["carrier"]),
       );
 
