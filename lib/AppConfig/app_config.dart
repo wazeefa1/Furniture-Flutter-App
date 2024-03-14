@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppConfig {
   // static const String hostUrl = 'https://spn21.spondan.com/amazcart';
-  static const String hostUrl = 'https://demo.wazeefa.in/cam';
+  // static const String hostUrl = 'https://demo.wazeefa.in/cam';
+  static const String hostUrl = 'https://cam.tikkabahraini.com';
 
   static String appName = 'Ezviz';
 
