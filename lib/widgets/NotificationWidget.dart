@@ -68,7 +68,7 @@ class NotificationWidget extends StatelessWidget {
                         height: 60,
                         width: 60,
                         child: Image.asset(
-                          'assets/images/thumbnail.png',
+                          'assets/config/splash_screen_logo.png',
                           fit: BoxFit.cover,
                         )),
                   ),
