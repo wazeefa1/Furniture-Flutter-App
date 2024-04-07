@@ -227,6 +227,100 @@ class PaymentGatewayController extends GetxController {
     // ));
   }
 
+
+
+
+
+  Future generateOrderNumber() async {
+    String token = await userToken.read(tokenKey);
+
+    Uri userData = Uri.parse(URLs.GENEREATE_ORDER_NO);
+
+    var response = await http.get(
+      userData,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+    );
+    print(response.statusCode.toString()+"------->OOOOOOO");
+    var jsonString = jsonDecode(response.body);
+
+    if(response.statusCode==200){
+      return jsonString["ord_no"];
+    }
+
+    else{
+      return "";
+    }
+
+
+
+  }
+
+  Rx<bool> isLoading=false.obs;
+
+
+  Future<List<String>> clickOrder(Map data) async {
+
+    isLoading.value=true;
+
+    String token = await userToken.read(tokenKey);
+
+    Uri url = Uri.parse(URLs.CLICK_PAYMENT);
+
+    var response = await http.post(
+      url,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
+      body: jsonEncode(data)
+    );
+
+
+    print(jsonEncode(data));
+
+    print(token);
+
+    var jsonString = response.statusCode==200?response.body:jsonEncode(response.body);
+
+    log(jsonString);
+
+    if(jsonString.contains("ORDER Duplicate")){
+      SnackBars().snackBarError("ORDER Duplicate");
+      return [];
+    }
+
+    else{
+
+      // Define the regex pattern
+      RegExp regex = RegExp(r'Location: (\S+)');
+
+      // Find the match
+      Match? match = regex.firstMatch(jsonString);
+
+      if (match != null) {
+        // Extract the URL
+         jsonString = match.group(1)!;
+        print(url); // Output: https://clickkw.com/paymentDeveloper/41/9944/en
+      } else {
+        print('URL not found in API response.');
+      }
+
+      print("RESPONSE CODE:---> ${response.statusCode}");
+      print(jsonString);
+
+      isLoading.value=false;
+
+      return [jsonString,response.statusCode.toString()];
+    }
+
+
+  }
+
+
   @override
   void onInit() {
     getGatewayList();

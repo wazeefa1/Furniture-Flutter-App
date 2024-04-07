@@ -61,8 +61,8 @@ class Gateway {
         logo: json["logo"],
         createdBy: json["created_by"],
         updatedBy: json["updated_by"],
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
+        createdAt: json["created_at"]!=null?DateTime.parse(json["created_at"]):null,
+        updatedAt: json["updated_at"]!=null?DateTime.parse(json["updated_at"]):null,
       );
 
   Map<String, dynamic> toJson() => {

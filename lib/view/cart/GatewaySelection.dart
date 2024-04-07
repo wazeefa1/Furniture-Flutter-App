@@ -16,6 +16,8 @@ import 'package:amazcart/model/PaymentGatewayModel.dart';
 import 'package:amazcart/utils/styles.dart';
 import 'package:amazcart/view/authentication/OtpVerificationPage.dart';
 import 'package:amazcart/view/payment/bank_payment_sheet.dart';
+import 'package:amazcart/view/payment/click_html_widget.dart';
+import 'package:amazcart/view/payment/click_payment.dart';
 import 'package:amazcart/view/payment/instamojo_payment.dart';
 import 'package:amazcart/view/payment/jazzcash.dart';
 import 'package:amazcart/view/payment/midtrans_payment.dart';
@@ -113,7 +115,7 @@ class _GatewaySelectionState extends State<GatewaySelection> {
         if (controller.isPaymentGatewayLoading.value) {
           return Center(child: CustomLoadingWidget());
         } else {
-          return ListView.separated(
+          return controller.isLoading.value?Center(child: CustomLoadingWidget()):ListView.separated(
               scrollDirection: Axis.vertical,
               itemCount: controller.gatewayList.length,
               padding: EdgeInsets.only(top: 8),
@@ -763,7 +765,90 @@ class _GatewaySelectionState extends State<GatewaySelection> {
       }
     }
 
+    // CLICK
     else if(controller.selectedGateway.value.id == 15) {
+
+      var orderNo= await controller.generateOrderNumber();
+
+      if(orderNo!=""){
+        _checkoutController.orderData.addAll({
+          'payment_method': controller.selectedGateway.value.id,
+        });
+        Map payment = {
+          'amount': _checkoutController.orderData['grand_total'],
+          'payment_method': controller.selectedGateway.value.id,
+          'ord_no':orderNo
+        };
+
+        int amount = (double.parse(_checkoutController.orderData['grand_total'] != null?
+        _checkoutController.orderData['grand_total'].toString() : "0.0") *
+            100)
+            .toInt();
+
+        // String transactionId = await MyStripePayment().makePayment(
+        //   amount: amount,
+        // );
+
+        var response = await controller.clickOrder(payment);
+
+        print('my final transaction is:::::: $response');
+
+
+        if(response.isNotEmpty&&response.last=="200"){
+
+          log(response.first);
+
+          if(response.first.contains("ORDER Duplicate")){
+            SnackBars().snackBarError("ORDER Duplicate");
+          }
+          else{
+
+            Navigator.of(context).push(MaterialPageRoute (
+              builder: (BuildContext context) =>  ClickPaymentScreen(paymentUrl: response.first.trim(),),));
+
+          }
+
+          // Navigator.of(context).push(MaterialPageRoute (
+          //   builder: (BuildContext context) =>  ClickHTML(htmlContent: response.first,),));
+          Navigator.of(context).push(MaterialPageRoute (
+            builder: (BuildContext context) =>  ClickPaymentScreen(paymentUrl: response.first,),));
+        }
+        else {
+          showAlertDialog(
+            context,
+            "Error",
+            "Something wrong",
+          );
+        }
+
+        // if (transactionId.isNotEmpty) {
+        //   payment.addAll({
+        //     'transection_id': transactionId,
+        //   });
+        //   await controller.paymentInfoStore(
+        //     paymentData: payment,
+        //     transactionID: transactionId,
+        //   );
+        // } else {
+        //   showAlertDialog(
+        //     context,
+        //     "Error",
+        //     "Something wrong",
+        //   );
+        // }
+      } else{
+        SnackBars().snackBarError("Invalid Order Number");
+
+      }
+
+
+
+
+    }
+
+    // TABBY
+
+    else if(controller.selectedGateway.value.id==16){
       final AddressController addressController = Get.put(AddressController());
       _checkoutController.orderData.addAll({
         'payment_method': controller.selectedGateway.value.id,
@@ -780,7 +865,6 @@ class _GatewaySelectionState extends State<GatewaySelection> {
         isScrollControlled: true,
         enableDrag: false,
       );
-
     }
 
   }

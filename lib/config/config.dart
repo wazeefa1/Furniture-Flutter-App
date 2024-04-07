@@ -214,6 +214,14 @@ mixin URLs {
   static const String OTP_SEND = '$API_URL/general-setting/send-otp';
   
   static const String FORGOT_PASSWORD = '$API_URL/forgot-password';
+
+  static const String CLICK_PAYMENT = '$API_URL/click-payment';
+
+  static const String GENEREATE_ORDER_NO = '$API_URL/order-no';
+
+
+
+
 }
 
 // constant for page limit & timeout
