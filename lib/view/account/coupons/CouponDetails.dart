@@ -147,7 +147,7 @@ class _CouponDetailsState extends State<CouponDetails> {
                                                     style: AppStyles.appFont
                                                         .copyWith(
                                                       color:
-                                                          AppStyles.pinkColor,
+                                                          AppStyles.appBlueColor,
                                                       fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.w500,
@@ -158,7 +158,7 @@ class _CouponDetailsState extends State<CouponDetails> {
                                                     style: AppStyles.appFont
                                                         .copyWith(
                                                       color:
-                                                          AppStyles.pinkColor,
+                                                          AppStyles.appBlueColor,
                                                       fontSize: 16,
                                                       fontWeight:
                                                           FontWeight.w500,
@@ -171,7 +171,7 @@ class _CouponDetailsState extends State<CouponDetails> {
                                                       .toString(),
                                                   style: AppStyles.appFont
                                                       .copyWith(
-                                                    color: AppStyles.pinkColor,
+                                                    color: AppStyles.appBlueColor,
                                                     fontSize: 30,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -186,7 +186,7 @@ class _CouponDetailsState extends State<CouponDetails> {
                                                       .toStringAsFixed(2),
                                                   style: AppStyles.appFont
                                                       .copyWith(
-                                                    color: AppStyles.pinkColor,
+                                                    color: AppStyles.appBlueColor,
                                                     fontSize: 30,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -199,7 +199,7 @@ class _CouponDetailsState extends State<CouponDetails> {
                                         child: Text(
                                           'OFF'.tr,
                                           style: AppStyles.appFont.copyWith(
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -276,7 +276,7 @@ class _CouponDetailsState extends State<CouponDetails> {
                                             'get'.tr +
                                             ' ${double.parse((currencyController.conversionRate.value * widget.coupon!.maximumDiscount).toString()).toStringAsFixed(2)}${currencyController.appCurrency.value} off',
                                         style: AppStyles.appFont.copyWith(
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w400,
                                         ),

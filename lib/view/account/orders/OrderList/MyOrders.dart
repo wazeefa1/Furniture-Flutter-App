@@ -48,7 +48,7 @@ class MyOrders extends StatelessWidget {
           labelColor: AppStyles.blackColor,
           labelPadding: EdgeInsets.zero,
           tabs: orderController.tabs,
-          indicatorColor: AppStyles.pinkColor,
+          indicatorColor: AppStyles.appBlueColor,
           unselectedLabelColor: AppStyles.greyColorDark,
         ),
       ),

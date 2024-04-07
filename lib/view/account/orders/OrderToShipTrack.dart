@@ -346,7 +346,7 @@ class _OrderToShipTrackState extends State<OrderToShipTrack> {
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 15,
-                        color: AppStyles.pinkColor,
+                        color: AppStyles.appBlueColor,
                       )
                     ],
                   ),

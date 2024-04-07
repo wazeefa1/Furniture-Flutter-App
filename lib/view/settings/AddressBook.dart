@@ -397,7 +397,7 @@ class AddressBook extends StatelessWidget {
                                   'Edit'.tr,
                                   textAlign: TextAlign.center,
                                   style: AppStyles.appFont.copyWith(
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                     fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,

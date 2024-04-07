@@ -103,11 +103,11 @@ class _MyCouponsState extends State<MyCoupons> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    foregroundColor: AppStyles.pinkColor,
-                    backgroundColor: AppStyles.pinkColor,
+                    foregroundColor: AppStyles.appBlueColor,
+                    backgroundColor: AppStyles.appBlueColor,
                     radius: 30,
                     child: Container(
-                      color: AppStyles.pinkColor,
+                      color: AppStyles.appBlueColor,
                       child: Image.asset(
                         AppConfig.appLogo,
                         width: 30,
@@ -350,7 +350,7 @@ class _MyCouponsState extends State<MyCoupons> {
                                                   '%',
                                                   style: AppStyles.appFont
                                                       .copyWith(
-                                                    color: AppStyles.pinkColor,
+                                                    color: AppStyles.appBlueColor,
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.w500,
                                                   ),
@@ -359,7 +359,7 @@ class _MyCouponsState extends State<MyCoupons> {
                                                   '${currencyController.appCurrency.value}',
                                                   style: AppStyles.appFont
                                                       .copyWith(
-                                                    color: AppStyles.pinkColor,
+                                                    color: AppStyles.appBlueColor,
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.w500,
                                                   ),
@@ -376,7 +376,7 @@ class _MyCouponsState extends State<MyCoupons> {
                                                 '${couponController.myCoupons.value.coupons![index].coupon!.discount}',
                                                 style:
                                                     AppStyles.appFont.copyWith(
-                                                  color: AppStyles.pinkColor,
+                                                  color: AppStyles.appBlueColor,
                                                   fontSize: 30,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -395,7 +395,7 @@ class _MyCouponsState extends State<MyCoupons> {
                                                     .toStringAsFixed(2),
                                                 style:
                                                     AppStyles.appFont.copyWith(
-                                                  color: AppStyles.pinkColor,
+                                                  color: AppStyles.appBlueColor,
                                                   fontSize: 30,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -408,7 +408,7 @@ class _MyCouponsState extends State<MyCoupons> {
                                       child: Text(
                                         'OFF'.tr,
                                         style: AppStyles.appFont.copyWith(
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -490,7 +490,7 @@ class _MyCouponsState extends State<MyCoupons> {
                                         'get up-to'.tr +
                                         ' ${double.parse((currencyController.conversionRate.value * couponController.myCoupons.value.coupons![index].coupon!.maximumDiscount).toString()).toStringAsFixed(2)}${currencyController.appCurrency.value} off',
                                     style: AppStyles.appFont.copyWith(
-                                      color: AppStyles.pinkColor,
+                                      color: AppStyles.appBlueColor,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -508,7 +508,7 @@ class _MyCouponsState extends State<MyCoupons> {
                                   'Free Shipping up-to'.tr +
                                       ' ${double.parse((currencyController.conversionRate.value * couponController.myCoupons.value.coupons![index].coupon!.maximumDiscount).toString()).toStringAsFixed(2)}${currencyController.appCurrency.value}',
                                   style: AppStyles.appFont.copyWith(
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -675,12 +675,12 @@ class _MyCouponsState extends State<MyCoupons> {
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),
                     ),
-                    border: Border.all(color: AppStyles.pinkColor)),
+                    border: Border.all(color: AppStyles.appBlueColor)),
                 child: Text(
                   'Add coupon'.tr,
                   textAlign: TextAlign.center,
                   style: AppStyles.appFont.copyWith(
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),

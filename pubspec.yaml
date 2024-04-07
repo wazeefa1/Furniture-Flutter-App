@@ -136,7 +136,8 @@ flutter_icons:
 
 # flutter pub run flutter_native_splash:create
 flutter_native_splash:
-  color: "#FF3364"
+#  color: "#FF3364"
+  color: "#549cff"
   image: assets/config/splash_screen_logo.png
   android: true
   ios: true

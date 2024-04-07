@@ -596,7 +596,7 @@ class _EditAddressState extends State<EditAddress> {
                 child: Text(
                   'Delete this Address'.tr,
                   style: AppStyles.appFont.copyWith(
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),

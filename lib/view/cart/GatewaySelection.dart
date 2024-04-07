@@ -142,7 +142,7 @@ class _GatewaySelectionState extends State<GatewaySelection> {
                   ),
                   child: RadioListTile<Gateway>(
                     value: controller.gatewayList[position],
-                    activeColor: AppStyles.pinkColor,
+                    activeColor: AppStyles.appBlueColor,
                     groupValue: controller.selectedGateway.value,
                     contentPadding: EdgeInsets.zero,
                     dense: true,

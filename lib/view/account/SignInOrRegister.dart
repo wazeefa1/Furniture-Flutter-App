@@ -49,7 +49,7 @@ class _SignInOrRegisterState extends State<SignInOrRegister> {
                             color: Colors.white, shape: BoxShape.circle),
                         child: Icon(
                           Icons.person,
-                          color: AppStyles.pinkColor,
+                          color: AppStyles.appBlueColor,
                           size: 20,
                         ),
                       ),
@@ -96,7 +96,7 @@ class _SignInOrRegisterState extends State<SignInOrRegister> {
                         'Sign in or Register'.tr,
                         textAlign: TextAlign.center,
                         style: AppStyles.appFont.copyWith(
-                          color: AppStyles.pinkColor,
+                          color: AppStyles.appBlueColor,
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                         ),

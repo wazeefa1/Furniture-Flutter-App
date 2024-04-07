@@ -99,7 +99,7 @@ class CustomDialogWidget extends StatelessWidget {
                             alignment: Alignment.center,
                             width: Get.width * 0.32,
                             decoration: BoxDecoration(
-                              color: AppStyles.pinkColor,
+                              color: AppStyles.appBlueColor,
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),

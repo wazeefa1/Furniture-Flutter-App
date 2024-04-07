@@ -32,8 +32,8 @@ class _CustomLoadingWidgetState extends State<CustomLoadingWidget>
       animate: true,
       infinite: true,
       child: CircleAvatar(
-        foregroundColor: AppStyles.pinkColor,
-        backgroundColor: AppStyles.pinkColor,
+        foregroundColor: AppStyles.appBlueColor,
+        backgroundColor: AppStyles.appBlueColor,
         radius: 30,
         child: Container(
           child: Image.asset(

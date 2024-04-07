@@ -397,7 +397,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                           width: 20,
                                           height: 20,
                                           decoration: BoxDecoration(
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                             shape: BoxShape.circle,
                                           ),
                                           alignment: Alignment.center,
@@ -508,7 +508,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                               },
                                               itemCount: _productDetailsModel.data?.product?.gallaryImages?.length ?? 0,
                                               control: new SwiperControl(
-                                                  color: AppStyles.pinkColor),
+                                                  color: AppStyles.appBlueColor),
                                               pagination: SwiperPagination(
                                                   margin: EdgeInsets.only(
                                                       bottom: 10.0),
@@ -526,7 +526,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                         color: AppStyles
                                                             .lightBlueColorAlt,
                                                         activeColor:
-                                                            AppStyles.pinkColor,
+                                                            AppStyles.appBlueColor,
                                                         size: Size(10.0, 10.0),
                                                         activeSize:
                                                             Size(25.0, 10.0),
@@ -611,7 +611,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                             backgroundColor: Colors.transparent,
                                             child: badges.Badge(
                                               badgeStyle: badges.BadgeStyle(
-                                                badgeColor: AppStyles.pinkColor,
+                                                badgeColor: AppStyles.appBlueColor,
                                               ),
                                               badgeAnimation: badges.BadgeAnimation.fade(
                                                 toAnimate: false,
@@ -804,7 +804,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                   : FontAwesomeIcons.heart,
                                               size: 20,
                                               color: _inWishList
-                                                  ? AppStyles.pinkColor
+                                                  ? AppStyles.appBlueColor
                                                   : AppStyles.greyColorLight,
                                             ),
                                           ),
@@ -1680,13 +1680,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                           .kFontBlack14w5
                                                           .copyWith(
                                                               color: AppStyles
-                                                                  .pinkColor),
+                                                                  .appBlueColor),
                                                     ),
                                                     Icon(
                                                       Icons.arrow_forward_ios,
                                                       size: 14,
                                                       color:
-                                                          AppStyles.pinkColor,
+                                                          AppStyles.appBlueColor,
                                                     ),
                                                   ],
                                                 ),
@@ -1826,12 +1826,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                 )
                                               : CircleAvatar(
                                                   foregroundColor:
-                                                      AppStyles.pinkColor,
+                                                      AppStyles.appBlueColor,
                                                   backgroundColor:
-                                                      AppStyles.pinkColor,
+                                                      AppStyles.appBlueColor,
                                                   radius: 20,
                                                   child: Container(
-                                                    color: AppStyles.pinkColor,
+                                                    color: AppStyles.appBlueColor,
                                                     child: Image.asset(
                                                       AppConfig.appLogo,
                                                       width: 20,
@@ -2145,7 +2145,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 Container(
                                   child: SvgPicture.asset(
                                     'assets/images/icon_nav_home.svg',
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                     width: 25,
                                   ),
                                 ),
@@ -2174,7 +2174,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       Container(
                                         child: SvgPicture.asset(
                                           'assets/images/icon_nav_cart.svg',
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           width: 25,
                                         ),
                                       ),
@@ -2230,7 +2230,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 Container(
                                   child: SvgPicture.asset(
                                     'assets/images/icon_nav_account.svg',
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                     width: 25,
                                   ),
                                 ),
@@ -2255,7 +2255,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     alignment: Alignment.center,
                                     width: Get.width * 0.40,
                                     decoration: BoxDecoration(
-                                      color: AppStyles.pinkColor,
+                                      color: AppStyles.appBlueColor,
                                     ),
                                     child: SizedBox(
                                       width: 20,
@@ -2375,7 +2375,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       alignment: Alignment.center,
                                       width: Get.width * 0.40,
                                       decoration: BoxDecoration(
-                                        color: AppStyles.pinkColor,
+                                        color: AppStyles.appBlueColor,
                                       ),
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),

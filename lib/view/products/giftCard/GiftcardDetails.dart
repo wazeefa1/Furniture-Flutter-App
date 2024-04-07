@@ -222,7 +222,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                               width: 20,
                               height: 20,
                               decoration: BoxDecoration(
-                                color: AppStyles.pinkColor,
+                                color: AppStyles.appBlueColor,
                                 shape: BoxShape.circle,
                               ),
                               alignment: Alignment.center,
@@ -278,7 +278,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                                   },
                                   itemCount: widget.giftcard.giftCardGalleryImages?.length ?? 0,
                                   control: new SwiperControl(
-                                      color: AppStyles.pinkColor),
+                                      color: AppStyles.appBlueColor),
                                   pagination: SwiperPagination(
                                       margin: EdgeInsets.only(bottom: 10.0),
                                       builder: SwiperCustomPagination(builder:
@@ -288,7 +288,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                                           alignment: Alignment.bottomCenter,
                                           child: RectSwiperPaginationBuilder(
                                             color: AppStyles.lightBlueColorAlt,
-                                            activeColor: AppStyles.pinkColor,
+                                            activeColor: AppStyles.appBlueColor,
                                             size: Size(10.0, 10.0),
                                             activeSize: Size(25.0, 10.0),
                                           ).build(context, config),
@@ -363,7 +363,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                                 backgroundColor: Colors.transparent,
                                 child: badges.Badge(
                                   badgeStyle: badges.BadgeStyle(
-                                    badgeColor: AppStyles.pinkColor,
+                                    badgeColor: AppStyles.appBlueColor,
                                   ),
                                   badgeAnimation: badges.BadgeAnimation.fade(
                                     toAnimate: false,
@@ -475,7 +475,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                                       : FontAwesomeIcons.heart,
                                   size: 20,
                                   color: _inWishList
-                                      ? AppStyles.pinkColor
+                                      ? AppStyles.appBlueColor
                                       : AppStyles.greyColorLight,
                                 ),
                               ),
@@ -906,7 +906,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                     Container(
                       child: SvgPicture.asset(
                         'assets/images/icon_nav_home.svg',
-                        color: AppStyles.pinkColor,
+                        color: AppStyles.appBlueColor,
                         width: 25,
                       ),
                     ),
@@ -961,7 +961,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                     Container(
                       child: SvgPicture.asset(
                         'assets/images/icon_nav_cart.svg',
-                        color: AppStyles.pinkColor,
+                        color: AppStyles.appBlueColor,
                         width: 25,
                       ),
                     ),
@@ -993,7 +993,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                     Container(
                       child: SvgPicture.asset(
                         'assets/images/icon_nav_account.svg',
-                        color: AppStyles.pinkColor,
+                        color: AppStyles.appBlueColor,
                         width: 25,
                       ),
                     ),
@@ -1017,7 +1017,7 @@ class _GiftcardDetailsState extends State<GiftcardDetails> {
                     alignment: Alignment.center,
                     width: Get.width * 0.40,
                     decoration: BoxDecoration(
-                      color: AppStyles.pinkColor,
+                      color: AppStyles.appBlueColor,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

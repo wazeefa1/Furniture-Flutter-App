@@ -151,7 +151,7 @@ class _HomeState extends State<Home> {
             ? Container(
                 margin: EdgeInsets.only(bottom: 60),
                 child: FloatingActionButton.small(
-                  backgroundColor: AppStyles.pinkColor,
+                  backgroundColor: AppStyles.appBlueColor,
                   onPressed: () {
                     scrollController.animateTo(0,
                         duration: Duration(milliseconds: 500),
@@ -610,7 +610,7 @@ class _HomeState extends State<Home> {
                                   child: Container(
                                     height: 80,
                                     alignment: Alignment.center,
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                     child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
@@ -665,7 +665,7 @@ class _HomeState extends State<Home> {
                                           child: Icon(
                                             Icons.arrow_forward_ios,
                                             size: 14,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                           ),
                                         ),
                                         SizedBox(
@@ -764,7 +764,7 @@ class _HomeState extends State<Home> {
                                           child: Container(
                                             width: Get.width * 0.35,
                                             decoration: BoxDecoration(
-                                              color: AppStyles.pinkColor,
+                                              color: AppStyles.appBlueColor,
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -846,7 +846,7 @@ class _HomeState extends State<Home> {
                                       child: Container(
                                         height: 80,
                                         alignment: Alignment.center,
-                                        color: AppStyles.pinkColor,
+                                        color: AppStyles.appBlueColor,
                                         child: Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
@@ -903,7 +903,7 @@ class _HomeState extends State<Home> {
                                               child: Icon(
                                                 Icons.arrow_forward_ios,
                                                 size: 14,
-                                                color: AppStyles.pinkColor,
+                                                color: AppStyles.appBlueColor,
                                               ),
                                             ),
                                             SizedBox(
@@ -1068,7 +1068,7 @@ class _HomeState extends State<Home> {
                                               child: Container(
                                                 width: Get.width * 0.35,
                                                 decoration: BoxDecoration(
-                                                  color: AppStyles.pinkColor,
+                                                  color: AppStyles.appBlueColor,
                                                 ),
                                                 child: Column(
                                                   mainAxisSize:
@@ -1257,7 +1257,7 @@ class _HomeState extends State<Home> {
                                                                                 padding: EdgeInsets.all(4),
                                                                                 alignment: Alignment.center,
                                                                                 decoration: BoxDecoration(
-                                                                                  color: AppStyles.pinkColor,
+                                                                                  color: AppStyles.appBlueColor,
                                                                                 ),
                                                                                 child: Text(
                                                                                   flashDeal.product!.discountType == "0" || flashDeal.product!.discountType == 0 ? '-${flashDeal.product!.discount.toString()}% ' : '${(flashDeal.product!.discount! * currencyController.conversionRate.value).toStringAsFixed(2)}${currencyController.appCurrency.value} ',
@@ -1286,7 +1286,7 @@ class _HomeState extends State<Home> {
                                                                                     padding: EdgeInsets.all(4),
                                                                                     alignment: Alignment.center,
                                                                                     decoration: BoxDecoration(
-                                                                                      color: AppStyles.pinkColor,
+                                                                                      color: AppStyles.appBlueColor,
                                                                                     ),
                                                                                     child: Text(
                                                                                       flashDeal.product!.hasDeal!.discountType == 0 ? '${flashDeal.product!.hasDeal!.discount.toString()}% ' : '${(flashDeal.product!.hasDeal!.discount! * currencyController.conversionRate.value).toStringAsFixed(2)}${currencyController.appCurrency.value} ',
@@ -1306,7 +1306,7 @@ class _HomeState extends State<Home> {
                                                                                         padding: EdgeInsets.all(4),
                                                                                         alignment: Alignment.center,
                                                                                         decoration: BoxDecoration(
-                                                                                          color: AppStyles.pinkColor,
+                                                                                          color: AppStyles.appBlueColor,
                                                                                         ),
                                                                                         child: Text(
                                                                                           flashDeal.product!.discountType == "0" ? '-${flashDeal.product!.discount.toString()}% ' : '${(flashDeal.product!.discount! * currencyController.conversionRate.value).toStringAsFixed(2)}${currencyController.appCurrency.value} ',
@@ -1403,7 +1403,7 @@ class _HomeState extends State<Home> {
                                                                 .copyWith(
                                                               fontSize: 12,
                                                               color: AppStyles
-                                                                  .pinkColor,
+                                                                  .appBlueColor,
                                                             ),
                                                           ),
                                                           SizedBox(

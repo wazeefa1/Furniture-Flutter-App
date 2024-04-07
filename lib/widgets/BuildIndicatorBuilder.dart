@@ -61,11 +61,11 @@ class BuildIndicatorBuilder {
               height: 30,
             ),
             CircleAvatar(
-              foregroundColor: AppStyles.pinkColor,
-              backgroundColor: AppStyles.pinkColor,
+              foregroundColor: AppStyles.appBlueColor,
+              backgroundColor: AppStyles.appBlueColor,
               radius: 30,
               child: Container(
-                color: AppStyles.pinkColor,
+                color: AppStyles.appBlueColor,
                 child: Image.asset(
                   AppConfig.appLogo,
                   width: 30,
@@ -129,11 +129,11 @@ class BuildIndicatorBuilder {
               height: 30,
             ),
             CircleAvatar(
-              foregroundColor: AppStyles.pinkColor,
-              backgroundColor: AppStyles.pinkColor,
+              foregroundColor: AppStyles.appBlueColor,
+              backgroundColor: AppStyles.appBlueColor,
               radius: 30,
               child: Container(
-                color: AppStyles.pinkColor,
+                color: AppStyles.appBlueColor,
                 child: Image.asset(
                   AppConfig.appLogo,
                   width: 30,

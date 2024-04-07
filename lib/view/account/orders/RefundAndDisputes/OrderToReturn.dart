@@ -749,7 +749,7 @@ class _OrderToReturnState extends State<OrderToReturn> {
                                 .map((x) => RadioListTile(
                                       dense: true,
                                       contentPadding: EdgeInsets.zero,
-                                      activeColor: AppStyles.pinkColor,
+                                      activeColor: AppStyles.appBlueColor,
                                       value: x,
                                       groupValue:
                                           controller.shippingFirst.value,
@@ -1123,7 +1123,7 @@ class _OrderToReturnState extends State<OrderToReturn> {
                                         child: ListTile(
                                           leading: Icon(
                                             Icons.comment_bank,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                           ),
                                           title: Text(
                                             'Bank Transfer',
@@ -1149,7 +1149,7 @@ class _OrderToReturnState extends State<OrderToReturn> {
                                         child: ListTile(
                                           leading: Icon(
                                             Icons.account_balance_wallet,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                           ),
                                           title: Text(
                                             'Wallet',
@@ -1194,7 +1194,7 @@ class _OrderToReturnState extends State<OrderToReturn> {
                                       Icon(
                                         Icons.arrow_forward_ios,
                                         size: 14,
-                                        color: AppStyles.pinkColor,
+                                        color: AppStyles.appBlueColor,
                                       )
                                     ],
                                   );
@@ -1446,7 +1446,7 @@ class _ProductsCheckBoxState extends State<ProductsCheckBox> {
   Widget build(BuildContext context) {
     return CheckboxListTile(
       checkColor: Colors.white,
-      activeColor: AppStyles.pinkColor,
+      activeColor: AppStyles.appBlueColor,
       tileColor: Colors.white,
       dense: true,
       isThreeLine: true,

@@ -335,7 +335,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                         'Select a pickup point'.tr,
                                         style: AppStyles.appFont.copyWith(
                                           fontWeight: FontWeight.w400,
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           fontSize: 13,
                                         ),
                                       ),
@@ -404,7 +404,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                         'Shipping Address'.tr,
                                         style: AppStyles.appFont.copyWith(
                                           fontWeight: FontWeight.w400,
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           fontSize: 13,
                                         ),
                                       ),
@@ -477,7 +477,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                           'Change'.tr,
                                           style: AppStyles.appFont.copyWith(
                                             fontWeight: FontWeight.w400,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                             fontSize: 13,
                                           ),
                                         ),
@@ -494,7 +494,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                         'Billing Address'.tr,
                                         style: AppStyles.appFont.copyWith(
                                           fontWeight: FontWeight.w400,
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           fontSize: 13,
                                         ),
                                       ),
@@ -565,7 +565,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                           'Change'.tr,
                                           style: AppStyles.appFont.copyWith(
                                             fontWeight: FontWeight.w400,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                             fontSize: 13,
                                           ),
                                         ),
@@ -585,7 +585,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                         'Shipping Address'.tr,
                                         style: AppStyles.appFont.copyWith(
                                           fontWeight: FontWeight.w400,
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           fontSize: 13,
                                         ),
                                       ),
@@ -658,7 +658,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                           'Change'.tr,
                                           style: AppStyles.appFont.copyWith(
                                             fontWeight: FontWeight.w400,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                             fontSize: 13,
                                           ),
                                         ),
@@ -675,7 +675,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                         'Billing Address'.tr,
                                         style: AppStyles.appFont.copyWith(
                                           fontWeight: FontWeight.w400,
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                           fontSize: 13,
                                         ),
                                       ),
@@ -746,7 +746,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                           'Change'.tr,
                                           style: AppStyles.appFont.copyWith(
                                             fontWeight: FontWeight.w400,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                             fontSize: 13,
                                           ),
                                         ),
@@ -833,7 +833,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                         ),
                         Icon(
                           FontAwesomeIcons.exclamation,
-                          color: AppStyles.pinkColor,
+                          color: AppStyles.appBlueColor,
                           size: 25,
                         ),
                         SizedBox(
@@ -1467,7 +1467,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                                                                         Container(
                                                                                           padding: EdgeInsets.all(4),
                                                                                           decoration: BoxDecoration(
-                                                                                            color: AppStyles.pinkColor,
+                                                                                            color: AppStyles.appBlueColor,
                                                                                             borderRadius: BorderRadius.circular(2),
                                                                                           ),
                                                                                           child: Text(
@@ -1483,7 +1483,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                                                                             Container(
                                                                                               padding: EdgeInsets.all(4),
                                                                                               decoration: BoxDecoration(
-                                                                                                color: AppStyles.pinkColor,
+                                                                                                color: AppStyles.appBlueColor,
                                                                                                 borderRadius: BorderRadius.circular(2),
                                                                                               ),
                                                                                               child: Text(
@@ -1500,7 +1500,7 @@ class _CartCheckoutState extends State<CartCheckout> {
                                                                                         Container(
                                                                                           padding: EdgeInsets.all(4),
                                                                                           decoration: BoxDecoration(
-                                                                                            color: AppStyles.pinkColor,
+                                                                                            color: AppStyles.appBlueColor,
                                                                                             borderRadius: BorderRadius.circular(2),
                                                                                           ),
                                                                                           child: Text(

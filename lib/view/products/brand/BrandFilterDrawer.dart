@@ -536,13 +536,13 @@ class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
                   decoration: BoxDecoration(),
                   child: Material(
                     type: MaterialType.circle,
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                     elevation: 3,
                     child: Container(
                         child: Icon(
                           Icons.circle,
                           size: 25,
-                          color: AppStyles.pinkColor,
+                          color: AppStyles.appBlueColor,
                         )),
                   ),
                 ),
@@ -550,13 +550,13 @@ class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
                   decoration: BoxDecoration(),
                   child: Material(
                     type: MaterialType.circle,
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                     elevation: 3,
                     child: Container(
                         child: Icon(
                           Icons.circle,
                           size: 25,
-                          color: AppStyles.pinkColor,
+                          color: AppStyles.appBlueColor,
                         )),
                   ),
                 ),
@@ -567,7 +567,7 @@ class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
                   ),
                   activeTrackBar: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                   ),
                 ),
                 hatchMark: FlutterSliderHatchMark(

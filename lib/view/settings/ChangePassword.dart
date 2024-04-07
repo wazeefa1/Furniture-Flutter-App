@@ -274,7 +274,7 @@ class _ChangePasswordState extends State<ChangePassword> {
             alignment: Alignment.center,
             height: 50,
             decoration: BoxDecoration(
-                color: AppStyles.pinkColor,
+                color: AppStyles.appBlueColor,
                 borderRadius: BorderRadius.all(Radius.circular(5.0))),
             child: Text(
               'Update Password'.tr,

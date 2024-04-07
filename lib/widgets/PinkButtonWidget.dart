@@ -18,7 +18,7 @@ class PinkButtonWidget extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-            color: AppStyles.pinkColor,
+            color: AppStyles.appBlueColor,
             borderRadius: BorderRadius.all(Radius.circular(5))),
         child: Padding(
           padding: const EdgeInsets.symmetric(

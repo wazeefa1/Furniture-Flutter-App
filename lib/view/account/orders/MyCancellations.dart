@@ -82,7 +82,7 @@ class _MyCancellationsState extends State<MyCancellations> {
                   children: [
                     Icon(
                       FontAwesomeIcons.exclamation,
-                      color: AppStyles.pinkColor,
+                      color: AppStyles.appBlueColor,
                       size: 25,
                     ),
                     SizedBox(

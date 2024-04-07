@@ -91,7 +91,7 @@ class _GridViewProductWidgetState extends State<GridViewProductWidget> {
                                         padding: EdgeInsets.all(4),
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
-                                          color: AppStyles.pinkColor,
+                                          color: AppStyles.appBlueColor,
                                         ),
                                         child: Text(
                                           widget.productModel?.discountType ==
@@ -125,7 +125,7 @@ class _GridViewProductWidgetState extends State<GridViewProductWidget> {
                                             padding: EdgeInsets.all(4),
                                             alignment: Alignment.center,
                                             decoration: BoxDecoration(
-                                              color: AppStyles.pinkColor,
+                                              color: AppStyles.appBlueColor,
                                             ),
                                             child: Text(
                                               widget.productModel?.hasDeal
@@ -155,7 +155,7 @@ class _GridViewProductWidgetState extends State<GridViewProductWidget> {
                                                 padding: EdgeInsets.all(4),
                                                 alignment: Alignment.center,
                                                 decoration: BoxDecoration(
-                                                  color: AppStyles.pinkColor,
+                                                  color: AppStyles.appBlueColor,
                                                 ),
                                                 child: Text(
                                                   widget.productModel
@@ -210,7 +210,7 @@ class _GridViewProductWidgetState extends State<GridViewProductWidget> {
                                       overflow: TextOverflow.ellipsis,
                                       style: AppStyles.appFont.copyWith(
                                         fontSize: 12,
-                                        color: AppStyles.pinkColor,
+                                        color: AppStyles.appBlueColor,
                                       ),
                                     ),
                                     SizedBox(
@@ -239,7 +239,7 @@ class _GridViewProductWidgetState extends State<GridViewProductWidget> {
                                       overflow: TextOverflow.ellipsis,
                                       style: AppStyles.appFont.copyWith(
                                         fontSize: 12,
-                                        color: AppStyles.pinkColor,
+                                        color: AppStyles.appBlueColor,
                                       ),
                                     ),
                                   ],
@@ -255,7 +255,7 @@ class _GridViewProductWidgetState extends State<GridViewProductWidget> {
                                   '${_generalSettingsController.calculatePrice(widget.productModel ?? ProductModel())}${_generalSettingsController.appCurrency.value}',
                                   style: AppStyles.appFont.copyWith(
                                     fontSize: 12,
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                   ),
                                 ),
                                 SizedBox(

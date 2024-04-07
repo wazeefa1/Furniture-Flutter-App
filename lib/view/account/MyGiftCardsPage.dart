@@ -261,7 +261,7 @@ class _MyGiftCardsPageState extends State<MyGiftCardsPage> {
                                                     .toString(),
                                                 style:
                                                     AppStyles.appFont.copyWith(
-                                                  color: AppStyles.pinkColor,
+                                                  color: AppStyles.appBlueColor,
                                                   fontSize: 25,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -270,7 +270,7 @@ class _MyGiftCardsPageState extends State<MyGiftCardsPage> {
                                                 '${currencyController.appCurrency}',
                                                 style:
                                                     AppStyles.appFont.copyWith(
-                                                  color: AppStyles.pinkColor,
+                                                  color: AppStyles.appBlueColor,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -289,7 +289,7 @@ class _MyGiftCardsPageState extends State<MyGiftCardsPage> {
                                           Scratcher(
                                             brushSize: 30,
                                             threshold: 100,
-                                            color: AppStyles.pinkColor,
+                                            color: AppStyles.appBlueColor,
                                             onScratchEnd: () {
                                               FlutterClipboard.copy(
                                                       '${prod.secretCode}')

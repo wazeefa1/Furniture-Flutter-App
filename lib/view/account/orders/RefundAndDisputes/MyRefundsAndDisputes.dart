@@ -70,7 +70,7 @@ class _MyRefundsAndDisputesState extends State<MyRefundsAndDisputes> {
                   children: [
                     Icon(
                       FontAwesomeIcons.exclamation,
-                      color: AppStyles.pinkColor,
+                      color: AppStyles.appBlueColor,
                       size: 25,
                     ),
                     SizedBox(

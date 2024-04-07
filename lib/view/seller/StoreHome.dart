@@ -100,7 +100,7 @@ class _StoreHomeState extends State<StoreHome> {
                         expandedHeight: 100.0,
                         floating: false,
                         pinned: true,
-                        backgroundColor: AppStyles.pinkColor,
+                        backgroundColor: AppStyles.appBlueColor,
                         leading: IconButton(
                           icon: Icon(
                             Icons.arrow_back,
@@ -391,7 +391,7 @@ class _StoreHomeState extends State<StoreHome> {
                         labelColor: AppStyles.blackColor,
                         labelPadding: EdgeInsets.zero,
                         tabs: controller.myTabs,
-                        indicatorColor: AppStyles.pinkColor,
+                        indicatorColor: AppStyles.appBlueColor,
                         unselectedLabelColor: AppStyles.greyColorDark,
                       ),
                       Expanded(
@@ -425,7 +425,7 @@ class SkewBgWhite extends CustomPainter {
     // Path number 1
 
     // paint.color = Color(0xffffffff);
-    paint.color = AppStyles.pinkColor;
+    paint.color = AppStyles.appBlueColor;
     path = Path();
     path.lineTo(size.width * 0.06, size.height * 0.06);
     path.cubicTo(size.width * 0.06, size.height * 0.06, size.width,

@@ -435,7 +435,7 @@ class _CreateTicketPageState extends State<CreateTicketPage> {
                               width: Get.width * 0.7,
                               height: 50,
                               decoration: BoxDecoration(
-                                  color: AppStyles.pinkColor,
+                                  color: AppStyles.appBlueColor,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5.0))),
                               child: Text(

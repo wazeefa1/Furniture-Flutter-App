@@ -53,7 +53,7 @@ class _NewUserZoneCouponMainState extends State<NewUserZoneCouponMain> {
                           ),
                           Expanded(
                             child: TabBar(
-                              indicatorColor: AppStyles.pinkColor,
+                              indicatorColor: AppStyles.appBlueColor,
                               isScrollable: true,
                               physics: BouncingScrollPhysics(),
                               automaticIndicatorColorAdjustment: true,

@@ -73,27 +73,27 @@ class _MainNavigationState extends State<MainNavigation> {
                 PersistentBottomNavBarItem(
                   icon: Image.asset(
                     'assets/images/nav_icon_home.png',
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                   ),
                   inactiveIcon: Image.asset(
                     'assets/images/nav_icon_home.png',
                     color: AppStyles.greyColorLight,
                   ),
                   title: "Home".tr,
-                  activeColorPrimary: AppStyles.pinkColor,
+                  activeColorPrimary: AppStyles.appBlueColor,
                   inactiveColorPrimary: AppStyles.greyColorLight,
                 ),
                 PersistentBottomNavBarItem(
                   icon: Image.asset(
                     'assets/images/nav_icon_message.png',
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                   ),
                   inactiveIcon: Image.asset(
                     'assets/images/nav_icon_message.png',
                     color: AppStyles.greyColorLight,
                   ),
                   title: ("Notifications".tr),
-                  activeColorPrimary: AppStyles.pinkColor,
+                  activeColorPrimary: AppStyles.appBlueColor,
                   inactiveColorPrimary: AppStyles.greyColorLight,
                 ),
                 PersistentBottomNavBarItem(
@@ -103,7 +103,7 @@ class _MainNavigationState extends State<MainNavigation> {
                             badgeAnimation:
                                 badges.BadgeAnimation.fade(toAnimate: false),
                             badgeStyle: badges.BadgeStyle(
-                              badgeColor: AppStyles.pinkColor,
+                              badgeColor: AppStyles.appBlueColor,
                             ),
                             badgeContent: Text(
                               '${cartController.cartListSelectedCount.value.toString()}',
@@ -114,12 +114,12 @@ class _MainNavigationState extends State<MainNavigation> {
                             ),
                             child: Image.asset(
                               'assets/images/nav_icon_cart.png',
-                              color: AppStyles.pinkColor,
+                              color: AppStyles.appBlueColor,
                             ),
                           )
                         : Image.asset(
                             'assets/images/nav_icon_cart.png',
-                            color: AppStyles.pinkColor,
+                            color: AppStyles.appBlueColor,
                           );
                   }),
                   inactiveIcon: Obx(() {
@@ -128,7 +128,7 @@ class _MainNavigationState extends State<MainNavigation> {
                             badgeAnimation:
                                 badges.BadgeAnimation.fade(toAnimate: false),
                             badgeStyle: badges.BadgeStyle(
-                              badgeColor: AppStyles.pinkColor,
+                              badgeColor: AppStyles.appBlueColor,
                             ),
                             badgeContent: Text(
                               '${cartController.cartListSelectedCount.value.toString()}',
@@ -148,20 +148,20 @@ class _MainNavigationState extends State<MainNavigation> {
                           );
                   }),
                   title: ("Cart".tr),
-                  activeColorPrimary: AppStyles.pinkColor,
+                  activeColorPrimary: AppStyles.appBlueColor,
                   inactiveColorPrimary: AppStyles.greyColorLight,
                 ),
                 PersistentBottomNavBarItem(
                   icon: Image.asset(
                     'assets/images/nav_icon_account.png',
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                   ),
                   inactiveIcon: Image.asset(
                     'assets/images/nav_icon_account.png',
                     color: AppStyles.greyColorLight,
                   ),
                   title: ("Account".tr),
-                  activeColorPrimary: AppStyles.pinkColor,
+                  activeColorPrimary: AppStyles.appBlueColor,
                   inactiveColorPrimary: AppStyles.greyColorLight,
                 ),
               ],

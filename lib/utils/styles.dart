@@ -68,7 +68,7 @@ class AppStyles {
   );
 
   static final TextStyle kFontPink15w5 = GoogleFonts.roboto(
-    color: AppStyles.pinkColor,
+    color: AppStyles.appBlueColor,
     fontSize: 15,
     fontWeight: FontWeight.w500,
   );
@@ -94,7 +94,7 @@ class AppStyles {
 
   static Color textFieldFillColor = Color(0xffE1EBF1);
 
-  static Color pinkColor = AppConfig.appColorScheme.toColor();
+  static Color appBlueColor = AppConfig.appColorScheme.toColor();
 
   static Color mediumPinkColor = Color(0xffeed0d7);
 

@@ -52,12 +52,12 @@ class _SupportTicketsPageState extends State<SupportTicketsPage> {
                 ),
               ),
               bottom: TabBar(
-                labelColor: AppStyles.pinkColor,
+                labelColor: AppStyles.appBlueColor,
                 indicator: BoxDecoration(
                   color: Color(0xffFFF0F4),
                 ),
                 unselectedLabelColor: AppStyles.greyColorDark,
-                indicatorColor: AppStyles.pinkColor,
+                indicatorColor: AppStyles.appBlueColor,
                 isScrollable: true,
                 physics: AlwaysScrollableScrollPhysics(),
                 automaticIndicatorColorAdjustment: true,

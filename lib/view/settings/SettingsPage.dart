@@ -95,30 +95,30 @@ class _SettingsPageState extends State<SettingsPage> {
                         height: 1,
                       )
                     : Container(),
-                loginController.loggedIn.value
-                    ? ListTile(
-                        onTap: () {
-                          Get.to(() => NotificationSettings());
-                        },
-                        tileColor: Colors.white,
-                        title: Text(
-                          'Messages'.tr,
-                          style: AppStyles.appFont.copyWith(
-                            color: Colors.black,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        subtitle: Text(
-                          'Receive exclusive offers & personal updates'.tr,
-                          style: AppStyles.appFont.copyWith(
-                            color: Colors.black,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      )
-                    : Container(),
+                // loginController.loggedIn.value
+                //     ? ListTile(
+                //         onTap: () {
+                //           Get.to(() => NotificationSettings());
+                //         },
+                //         tileColor: Colors.white,
+                //         title: Text(
+                //           'Messages'.tr,
+                //           style: AppStyles.appFont.copyWith(
+                //             color: Colors.black,
+                //             fontSize: 15,
+                //             fontWeight: FontWeight.w400,
+                //           ),
+                //         ),
+                //         subtitle: Text(
+                //           'Receive exclusive offers & personal updates'.tr,
+                //           style: AppStyles.appFont.copyWith(
+                //             color: Colors.black,
+                //             fontSize: 13,
+                //             fontWeight: FontWeight.w400,
+                //           ),
+                //         ),
+                //       )
+                //     : Container(),
                 loginController.loggedIn.value
                     ? Divider(
                         color: AppStyles.appBackgroundColor,
@@ -535,7 +535,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               title: Text(
                                 'Delete Account'.tr,
                                 style: AppStyles.appFont.copyWith(
-                                  color: AppStyles.pinkColor,
+                                  color: AppStyles.appBlueColor,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -553,7 +553,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               title: Text(
                                 'Logout'.tr,
                                 style: AppStyles.appFont.copyWith(
-                                  color: AppStyles.pinkColor,
+                                  color: AppStyles.appBlueColor,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -606,7 +606,7 @@ class LabeledRadio extends StatelessWidget {
               onChanged: (bool? newValue) {
                 onChanged!(newValue);
               },
-              activeColor: AppStyles.pinkColor,
+              activeColor: AppStyles.appBlueColor,
             ),
           ],
         ),

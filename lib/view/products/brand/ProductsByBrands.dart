@@ -103,7 +103,7 @@ class _ProductsByBrandsState extends State<ProductsByBrands> {
         backgroundColor: AppStyles.appBackgroundColor,
         floatingActionButton: isScrolling
             ? FloatingActionButton(
-                backgroundColor: AppStyles.pinkColor,
+                backgroundColor: AppStyles.appBlueColor,
                 onPressed: () {
                   scrollController.animateTo(0,
                       duration: Duration(milliseconds: 500),

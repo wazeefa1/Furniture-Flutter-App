@@ -51,7 +51,7 @@ class _NewUserZoneCategoryMainState extends State<NewUserZoneCategoryMain> {
                           ),
                           Expanded(
                             child: TabBar(
-                              indicatorColor: AppStyles.pinkColor,
+                              indicatorColor: AppStyles.appBlueColor,
                               isScrollable: true,
                               physics: BouncingScrollPhysics(),
                               automaticIndicatorColorAdjustment: true,

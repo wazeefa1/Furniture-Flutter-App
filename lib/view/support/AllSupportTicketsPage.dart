@@ -42,7 +42,7 @@ class _AllSupportTicketsPageState extends State<AllSupportTicketsPage> {
           print('onp');
           Get.to(() => CreateTicketPage(source));
         },
-        backgroundColor: AppStyles.pinkColor,
+        backgroundColor: AppStyles.appBlueColor,
         child: Icon(
           Icons.add,
           color: Colors.white,

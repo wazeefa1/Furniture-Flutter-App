@@ -15,6 +15,7 @@ import 'package:amazcart/widgets/SettingsListTileWidget.dart';
 import 'package:amazcart/widgets/SettingsModalWidget.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class AccountInformation extends StatefulWidget {
   @override
@@ -721,7 +722,7 @@ class _AccountInformationState extends State<AccountInformation> {
                 SettingsListTileWidget(
                   titleText: 'Date of Birth'.tr,
                   subtitleText:
-                      loginController.profileData.value.dateOfBirth ?? "",
+                  loginController.profileData.value.dateOfBirth!=null?DateFormat('dd-MM-yyyy').format(DateTime.parse(loginController.profileData.value.dateOfBirth.toString())):"",
                   changeOnTap: () {
                     var splitted;
                     if (loginController.profileData.value.dateOfBirth != "" &&

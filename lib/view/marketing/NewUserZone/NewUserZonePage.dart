@@ -202,7 +202,7 @@ class _NewUserZonePageState extends State<NewUserZonePage>
               children: <Widget>[
                 TabBar(
                   controller: _tabController,
-                  indicatorColor: AppStyles.pinkColor,
+                  indicatorColor: AppStyles.appBlueColor,
                   isScrollable: true,
                   physics: AlwaysScrollableScrollPhysics(),
                   automaticIndicatorColorAdjustment: true,

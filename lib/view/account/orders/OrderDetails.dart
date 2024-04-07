@@ -604,7 +604,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                       ),
                                                       border: Border.all(
                                                           color: AppStyles
-                                                              .pinkColor)),
+                                                              .appBlueColor)),
                                                   child: Text(
                                                     'Write a Review'.tr,
                                                     textAlign: TextAlign.center,

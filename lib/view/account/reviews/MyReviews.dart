@@ -87,7 +87,7 @@ class _MyReviewsState extends State<MyReviews> {
               labelColor: AppStyles.blackColor,
               labelPadding: EdgeInsets.zero,
               tabs: tabs,
-              indicatorColor: AppStyles.pinkColor,
+              indicatorColor: AppStyles.appBlueColor,
               unselectedLabelColor: AppStyles.greyColorDark,
               automaticIndicatorColorAdjustment: true,
               indicatorSize: TabBarIndicatorSize.label,
@@ -230,7 +230,7 @@ class _MyReviewsState extends State<MyReviews> {
                             Icon(
                               Icons.arrow_forward_ios,
                               size: 12,
-                              color: AppStyles.pinkColor,
+                              color: AppStyles.appBlueColor,
                             ),
                           ],
                         ),

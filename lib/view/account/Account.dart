@@ -109,7 +109,7 @@ class _AccountState extends State<Account> {
         slivers: [
           SliverAppBar(
             expandedHeight: 100,
-            backgroundColor: AppStyles.pinkColor,
+            backgroundColor: AppStyles.appBlueColor,
             titleSpacing: 0,
             centerTitle: true,
             toolbarHeight: 100,
@@ -151,7 +151,7 @@ class _AccountState extends State<Account> {
                                 color: Colors.white, shape: BoxShape.circle),
                             child: Icon(
                               Icons.add,
-                              color: AppStyles.pinkColor,
+                              color: AppStyles.appBlueColor,
                               size: 20,
                             ),
                           ),
@@ -280,7 +280,7 @@ class _AccountState extends State<Account> {
                               'Sign in or Register'.tr,
                               textAlign: TextAlign.center,
                               style: AppStyles.appFont.copyWith(
-                                color: AppStyles.pinkColor,
+                                color: AppStyles.appBlueColor,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,
                               ),
@@ -336,7 +336,7 @@ class _AccountState extends State<Account> {
                                   // ),
                                   Icon(
                                     Icons.widgets_sharp,
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                   ),
                                   SizedBox(
                                     height: 2,
@@ -370,7 +370,7 @@ class _AccountState extends State<Account> {
                                   // ),
                                   Icon(
                                     Icons.card_giftcard,
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                   ),
                                   SizedBox(
                                     height: 2,
@@ -403,7 +403,7 @@ class _AccountState extends State<Account> {
                                   // ),
                                   Icon(
                                     Icons.credit_card,
-                                    color: AppStyles.pinkColor,
+                                    color: AppStyles.appBlueColor,
                                   ),
                                   SizedBox(
                                     height: 2,

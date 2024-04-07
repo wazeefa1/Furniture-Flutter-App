@@ -413,7 +413,7 @@ class _AddToCartWidgetState extends State<AddToCartWidget> {
                                                           color: selected[
                                                                   colorIndex]
                                                               ? AppStyles
-                                                                  .pinkColor
+                                                                  .appBlueColor
                                                               : Colors
                                                                   .transparent,
                                                         ),
@@ -502,7 +502,7 @@ class _AddToCartWidgetState extends State<AddToCartWidget> {
                                                 buttonSpace: 0,
                                                 buttonColor: Colors.white,
                                                 selectedColor:
-                                                    AppStyles.pinkColor,
+                                                    AppStyles.appBlueColor,
                                                 elevation: 3,
                                                 buttonHeight: 30,
                                               ),

@@ -186,7 +186,7 @@ class _WriteReview2State extends State<WriteReview2> {
           'Something went wrong'.tr,
           "Please try again. Thank you.".tr,
           snackPosition: SnackPosition.TOP,
-          backgroundColor: AppStyles.pinkColor,
+          backgroundColor: AppStyles.appBlueColor,
           colorText: Colors.white,
           borderRadius: 5,
         );
@@ -225,7 +225,7 @@ class _WriteReview2State extends State<WriteReview2> {
         '${jsonString['message']}',
         "$errorText1$errorText2",
         snackPosition: SnackPosition.TOP,
-        backgroundColor: AppStyles.pinkColor,
+        backgroundColor: AppStyles.appBlueColor,
         colorText: Colors.white,
         borderRadius: 5,
       );
@@ -519,19 +519,19 @@ class _WriteReview2State extends State<WriteReview2> {
                         }
                       },
                       child: DottedBorder(
-                        color: AppStyles.pinkColor,
+                        color: AppStyles.appBlueColor,
                         padding: EdgeInsets.zero,
                         borderType: BorderType.RRect,
                         radius: Radius.circular(5),
                         child: Container(
                           width: 50,
                           height: 50,
-                          color: AppStyles.pinkColor.withOpacity(0.1),
+                          color: AppStyles.appBlueColor.withOpacity(0.1),
                           child: Column(
                             children: [
                               Icon(
                                 Icons.add,
-                                color: AppStyles.pinkColor,
+                                color: AppStyles.appBlueColor,
                               ),
                               Text('${list[productIndex].images.length - 1}/6'),
                             ],
@@ -609,7 +609,7 @@ class _WriteReview2State extends State<WriteReview2> {
                               height: 20,
                               width: 20,
                               decoration: BoxDecoration(
-                                color: AppStyles.pinkColor,
+                                color: AppStyles.appBlueColor,
                                 shape: BoxShape.rectangle,
                                 borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(5),

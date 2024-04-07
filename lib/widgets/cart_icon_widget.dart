@@ -38,7 +38,7 @@ class CartIconWidget extends StatelessWidget {
                   width: 20,
                   height: 20,
                   decoration: BoxDecoration(
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                     shape: BoxShape.circle,
                   ),
                   alignment: Alignment.center,

@@ -97,7 +97,7 @@ class _AllCategorySubCategoryState extends State<AllCategorySubCategory> {
                                               FaCustomIcon.getFontAwesomeIcon(category.icon ?? ''),
                                               size: 30,
                                               color: _selectedIndex == index
-                                                  ? AppStyles.pinkColor
+                                                  ? AppStyles.appBlueColor
                                                   : Colors.black,
                                             ),
                                           )
@@ -107,7 +107,7 @@ class _AllCategorySubCategoryState extends State<AllCategorySubCategory> {
                                               Icons.list_alt_outlined,
                                               size: 30,
                                               color: _selectedIndex == index
-                                                  ? AppStyles.pinkColor
+                                                  ? AppStyles.appBlueColor
                                                   : Colors.black,
                                             ),
                                           ),

@@ -123,7 +123,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
                   height: 40,
                   ringColor: Colors.grey[300] ?? Colors.grey,
                   ringGradient: null,
-                  fillColor: AppStyles.pinkColor,
+                  fillColor: AppStyles.appBlueColor,
                   fillGradient: null,
                   backgroundColor: Colors.white,
                   backgroundGradient: null,
@@ -294,7 +294,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
                 child: Text(
                   "Resend OTP".tr,
                   style: AppStyles.appFont.copyWith(
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),

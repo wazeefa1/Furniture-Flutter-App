@@ -68,7 +68,7 @@ class _AllTopPickProductsState extends State<AllTopPickProducts> {
       ),
       floatingActionButton: isScrolling
           ? FloatingActionButton(
-              backgroundColor: AppStyles.pinkColor,
+              backgroundColor: AppStyles.appBlueColor,
               onPressed: () {
                 scrollController.animateTo(0,
                     duration: Duration(milliseconds: 500),

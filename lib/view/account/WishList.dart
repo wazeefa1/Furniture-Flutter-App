@@ -159,7 +159,7 @@ class _WishListState extends State<WishList> {
                   ),
                   Icon(
                     FontAwesomeIcons.exclamation,
-                    color: AppStyles.pinkColor,
+                    color: AppStyles.appBlueColor,
                     size: 25,
                   ),
                   SizedBox(
@@ -330,7 +330,7 @@ class _WishListState extends State<WishList> {
                                                         style: AppStyles.appFont
                                                             .copyWith(
                                                           color: AppStyles
-                                                              .pinkColor,
+                                                              .appBlueColor,
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -393,7 +393,7 @@ class _WishListState extends State<WishList> {
                                                       decoration: TextDecoration
                                                           .lineThrough,
                                                       decorationColor:
-                                                          AppStyles.pinkColor,
+                                                          AppStyles.appBlueColor,
                                                     ),
                                                   ),
                                                   SizedBox(

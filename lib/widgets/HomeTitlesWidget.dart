@@ -62,7 +62,7 @@ class HomeTitlesWidget extends StatelessWidget {
                       'Shop more'.tr.toUpperCase(),
                       textAlign: TextAlign.center,
                       style: AppStyles.appFont
-                          .copyWith(color: AppStyles.pinkColor, fontSize: 12),
+                          .copyWith(color: AppStyles.appBlueColor, fontSize: 12),
                     ),
                     SizedBox(
                       width: 2,
@@ -70,7 +70,7 @@ class HomeTitlesWidget extends StatelessWidget {
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 14,
-                      color: AppStyles.pinkColor,
+                      color: AppStyles.appBlueColor,
                     ),
                   ],
                 ),

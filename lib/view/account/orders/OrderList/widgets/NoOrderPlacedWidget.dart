@@ -12,7 +12,7 @@ class NoOrderPlacedWidget extends StatelessWidget {
       children: [
         Icon(
           FontAwesomeIcons.exclamation,
-          color: AppStyles.pinkColor,
+          color: AppStyles.appBlueColor,
           size: 25,
         ),
         SizedBox(

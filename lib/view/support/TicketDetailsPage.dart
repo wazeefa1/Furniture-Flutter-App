@@ -415,77 +415,79 @@ class _TicketDetailsPageState extends State<TicketDetailsPage> {
                   );
                 }),
           ),
-          Form(
-            key: _formKey,
-            child: Container(
-              height: 70,
-              child: Row(
-                children: [
-                  Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.attach_file_rounded,
-                        color: AppStyles.greyColorDark,
-                        size: 20,
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Flexible(
-                    child: TextField(
-                      maxLines: 15,
-                      minLines: 1,
-                      autofocus: false,
-                      scrollPhysics: AlwaysScrollableScrollPhysics(),
-                      controller: replyCtrl,
-                      decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        hintText: 'Type a message here',
-                        fillColor: AppStyles.appBackgroundColor,
-                        isDense: true,
-                        contentPadding: EdgeInsets.all(10),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppStyles.textFieldFillColor,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppStyles.textFieldFillColor,
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppStyles.textFieldFillColor,
-                          ),
-                        ),
-                        hintStyle: AppStyles.kFontGrey12w5,
-                      ),
-                      style: AppStyles.kFontBlack12w4,
-                    ),
-                  ),
-                  Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.send,
-                        color: AppStyles.greyColorDark,
-                        size: 20,
-                      ),
-                      onPressed: () async {
-                        print('send');
-                        await replyTicket();
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // Form(
+          //   key: _formKey,
+          //   child: Container(
+          //     height: 70,
+          //     child: Row(
+          //       children: [
+          //         Container(
+          //           child: IconButton(
+          //             icon: Icon(
+          //               Icons.attach_file_rounded,
+          //               color: AppStyles.greyColorDark,
+          //               size: 20,
+          //             ),
+          //             onPressed: () {
+          //               pickTicketFile();
+          //             },
+          //           ),
+          //         ),
+          //         Flexible(
+          //           child: TextField(
+          //             maxLines: 15,
+          //             minLines: 1,
+          //             autofocus: false,
+          //             scrollPhysics: AlwaysScrollableScrollPhysics(),
+          //             controller: replyCtrl,
+          //             decoration: InputDecoration(
+          //               floatingLabelBehavior: FloatingLabelBehavior.auto,
+          //               hintText: 'Type a message here',
+          //               fillColor: AppStyles.appBackgroundColor,
+          //               isDense: true,
+          //               contentPadding: EdgeInsets.all(10),
+          //               border: OutlineInputBorder(
+          //                 borderSide: BorderSide(
+          //                   color: AppStyles.textFieldFillColor,
+          //                 ),
+          //               ),
+          //               enabledBorder: OutlineInputBorder(
+          //                 borderSide: BorderSide(
+          //                   color: AppStyles.textFieldFillColor,
+          //                 ),
+          //               ),
+          //               errorBorder: OutlineInputBorder(
+          //                 borderSide: BorderSide(
+          //                   color: Colors.red,
+          //                 ),
+          //               ),
+          //               focusedBorder: OutlineInputBorder(
+          //                 borderSide: BorderSide(
+          //                   color: AppStyles.textFieldFillColor,
+          //                 ),
+          //               ),
+          //               hintStyle: AppStyles.kFontGrey12w5,
+          //             ),
+          //             style: AppStyles.kFontBlack12w4,
+          //           ),
+          //         ),
+          //         Container(
+          //           child: IconButton(
+          //             icon: Icon(
+          //               Icons.send,
+          //               color: AppStyles.greyColorDark,
+          //               size: 20,
+          //             ),
+          //             onPressed: () async {
+          //               print('send');
+          //               await replyTicket();
+          //             },
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

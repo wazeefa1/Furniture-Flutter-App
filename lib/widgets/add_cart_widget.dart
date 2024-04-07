@@ -62,7 +62,7 @@ class _AddCartWidgetState extends State<AddCartWidget> {
               padding: EdgeInsets.all(6),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: AppStyles.pinkColor,
+                color: AppStyles.appBlueColor,
                 shape: BoxShape.circle,
               ),
               child: CircularProgressIndicator(
@@ -166,7 +166,7 @@ class _AddCartWidgetState extends State<AddCartWidget> {
               padding: EdgeInsets.all(6),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: AppStyles.pinkColor,
+                color: AppStyles.appBlueColor,
                 shape: BoxShape.circle,
               ),
               child: Image.asset(
