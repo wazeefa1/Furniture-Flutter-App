@@ -75,6 +75,7 @@ class _MyAppState extends State<MyApp> {
       // getPages: routes,
       defaultTransition: Transition.fadeIn,
       theme: ThemeData(
+        useMaterial3: false,
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(
             color: Colors.black,
