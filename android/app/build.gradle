@@ -41,7 +41,7 @@ keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
 
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -60,7 +60,7 @@ android {
     defaultConfig {
         applicationId "com.ezviz.app"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
