@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppConfig {
   // static const String hostUrl = 'https://spn21.spondan.com/amazcart';
-  static const String hostUrl = 'https://demo.wazeefa.in/cam';
+  // static const String hostUrl = 'https://demo.wazeefa.in/cam';
+  static const String hostUrl = 'https://demo.wazeefa.in/ezviz_furniture';
   // static const String hostUrl = 'https://cam.tikkabahraini.com';
   // static const String hostUrl = 'https://ezviz.com';
 
-  static String appName = 'Ezviz';
+  static String appName = 'Furniture';
 
   static String loginBackgroundImage = 'assets/config/login_bg.png';
 
