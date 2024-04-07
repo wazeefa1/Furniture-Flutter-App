@@ -198,8 +198,8 @@ class HomeController extends GetxController {
         return BrandsMain.fromJson(data);
       }).then((value) async {
         allBrands = value.data!;
-        chunkedBrands
-            .addAll(allBrands.where((p0) => p0.featured == 1).toList());
+        // chunkedBrands
+        //     .addAll(allBrands.where((p0) => p0.featured == 1).toList());
       });
     } catch (e) {
       isBrandsLoading(false);

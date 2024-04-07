@@ -37,24 +37,24 @@ class HomeTitlesWidget extends StatelessWidget {
                 SizedBox(
                   width: 5,
                 ),
-                showDeal != null
-                    ? SlideCountdownClock(
-                        duration: dealDuration ?? Duration(seconds: 1),
-                        slideDirection: SlideDirection.up,
-                        textStyle: AppStyles.appFont.copyWith(
-                          fontSize: 12,
-                          color: Colors.white,
-                        ),
-                        padding: EdgeInsets.all(0),
-                        decoration: BoxDecoration(
-                          color: Color(0xff64086C),
-                          shape: BoxShape.rectangle,
-                        ),
-                        onDone: () {},
-                        tightLabel: true,
-                        shouldShowDays: true,
-                      )
-                    : SizedBox.shrink(),
+                // showDeal != null
+                //     ? SlideCountdownClock(
+                //         duration: dealDuration ?? Duration(seconds: 1),
+                //         slideDirection: SlideDirection.up,
+                //         textStyle: AppStyles.appFont.copyWith(
+                //           fontSize: 12,
+                //           color: Colors.white,
+                //         ),
+                //         padding: EdgeInsets.all(0),
+                //         decoration: BoxDecoration(
+                //           color: Color(0xff64086C),
+                //           shape: BoxShape.rectangle,
+                //         ),
+                //         onDone: () {},
+                //         tightLabel: true,
+                //         shouldShowDays: true,
+                //       )
+                //     : SizedBox.shrink(),
                 Spacer(),
                 Row(
                   children: [
