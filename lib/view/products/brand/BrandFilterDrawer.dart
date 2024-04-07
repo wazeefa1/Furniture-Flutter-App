@@ -12,6 +12,7 @@ import 'package:flutter_xlider/flutter_xlider.dart';
 import 'package:get/get.dart';
 import 'package:amazcart/widgets/BlueButtonWidget.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
+import 'package:string_to_color/string_to_color.dart';
 
 class BrandFilterDrawer extends StatefulWidget {
   final int? brandId;
@@ -27,7 +28,7 @@ class BrandFilterDrawer extends StatefulWidget {
 class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
   final HomeController controller = Get.put(HomeController());
   final GeneralSettingsController currencyController =
-      Get.put(GeneralSettingsController());
+  Get.put(GeneralSettingsController());
 
   RangeValues? _currentRangeValues;
   bool showRange = false;
@@ -76,254 +77,123 @@ class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
             //Category
             controller.subCatsInBrands.length > 0
                 ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: AppStyles.textFieldFillColor,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15),
-                        child: Text(
-                          'Child Category'.tr,
-                          style: AppStyles.kFontBlack12w4,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                    ],
-                  )
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 5,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: AppStyles.textFieldFillColor,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    'Child Category'.tr,
+                    style: AppStyles.kFontBlack12w4,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+              ],
+            )
                 : Container(),
 
             controller.subCatsInBrands.length > 0
                 ? Builder(
-                    builder: (context) {
-                      final _items = controller.subCatsInBrands
-                          .map((category) => MultiSelectItem<CategoryData>(
-                              category, category.name ?? ''))
-                          .toList();
-                      return MultiSelectChipField<CategoryData>(
-                        items: _items,
-                        scroll: false,
-                        searchable: false,
-                        showHeader: false,
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: Colors.white)),
-                        itemBuilder: (item, state) {
-                          return Card(
-                            color:
-                                controller.selectedBrandCat.contains(item.value)
-                                    ? AppStyles.darkBlueColor
-                                    : Colors.white,
-                            elevation:
-                                controller.selectedBrandCat.contains(item.value)
-                                    ? 5
-                                    : 3,
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                            ),
-                            child: Container(
-                              height: 30,
-                              child: MaterialButton(
-                                onPressed: () async {
-                                  state.didChange(controller.selectedBrandCat);
+              builder: (context) {
+                final _items = controller.subCatsInBrands
+                    .map((category) => MultiSelectItem<CategoryData>(
+                    category, category.name ?? ''))
+                    .toList();
+                return MultiSelectChipField<CategoryData?>(
+                  items: _items,
+                  scroll: false,
+                  searchable: false,
+                  showHeader: false,
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Colors.white)),
+                  itemBuilder: (item, state) {
+                    return Card(
+                      color:
+                      controller.selectedBrandCat.contains(item.value)
+                          ? AppStyles.darkBlueColor
+                          : Colors.white,
+                      elevation:
+                      controller.selectedBrandCat.contains(item.value)
+                          ? 5
+                          : 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                        BorderRadius.all(Radius.circular(5)),
+                      ),
+                      child: Container(
+                        height: 30,
+                        child: MaterialButton(
+                          onPressed: () async {
+                            state.didChange(controller.selectedBrandCat);
 
-                                  if (controller.selectedBrandCat
-                                      .contains(item.value)) {
-                                    controller.selectedBrandCat
-                                        .remove(item.value);
+                            if (controller.selectedBrandCat
+                                .contains(item.value)) {
+                              controller.selectedBrandCat
+                                  .remove(item.value);
 
-                                    controller
-                                        .subCatFilter.value.filterTypeValue
-                                        ?.remove(item.value.id.toString());
+                              controller
+                                  .subCatFilter.value.filterTypeValue
+                                  ?.remove(item.value!.id.toString());
 
-                                    controller.dataFilterCat.value
-                                        .filterDataFromCat?.filterType
-                                        ?.where((element) =>
-                                            element.filterTypeId == 'cat')
-                                        .toList()
-                                        .remove(controller.subCatFilter.value);
+                              controller.dataFilterCat.value
+                                  .filterDataFromCat?.filterType
+                                  ?.where((element) =>
+                              element.filterTypeId == 'cat')
+                                  .toList()
+                                  .remove(controller.subCatFilter.value);
 
-                                    await doFilter();
-                                  } else {
-                                    controller.selectedBrandCat.add(item.value);
-                                    controller
-                                        .subCatFilter.value.filterTypeValue
-                                        ?.add(item.value.id.toString());
+                              await doFilter();
+                            } else {
+                              controller.selectedBrandCat.add(item.value!);
+                              controller
+                                  .subCatFilter.value.filterTypeValue
+                                  ?.add(item.value!.id.toString());
 
-                                    controller.dataFilterCat.value
-                                        .filterDataFromCat?.filterType
-                                        ?.add(controller.subCatFilter.value);
+                              controller.dataFilterCat.value
+                                  .filterDataFromCat?.filterType
+                                  ?.add(controller.subCatFilter.value);
 
-                                    await doFilter();
-                                  }
-                                },
-                                child: Text(item.value.name ?? '',
-                                    style: controller.selectedBrandCat
-                                            .contains(item.value)
-                                        ? AppStyles.kFontWhite14w5
-                                        : AppStyles.kFontBlack14w5),
-                              ),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  )
+                              await doFilter();
+                            }
+                          },
+                          child: Text(item.value!.name ?? '',
+                              style: controller.selectedBrandCat
+                                  .contains(item.value)
+                                  ? AppStyles.kFontWhite14w5
+                                  : AppStyles.kFontBlack14w5),
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+            )
                 : Container(),
 
             (controller.brandAllData.value.attributes?.length ?? 0) > 0
                 ? ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: controller.brandAllData.value.attributes?.length,
-                    itemBuilder: (context, attIndex) {
-                      return Column(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: controller.brandAllData.value.attributes?.length,
+                itemBuilder: (context, attIndex) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Divider(
-                                height: 1,
-                                thickness: 1,
-                                color: AppStyles.textFieldFillColor,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 15),
-                                child: Text(
-                                  '${controller.brandAllData.value.attributes?[attIndex].name}',
-                                  style: AppStyles.kFontBlack12w4,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                            ],
-                          ),
-                          (controller.brandAllData.value.attributes?[attIndex].values?.length ?? 0) > 0
-                              ? Builder(
-                                  builder: (context) {
-                                    final _items = controller.brandAllData.value
-                                        .attributes?[attIndex].values
-                                        ?.map((attribute) => MultiSelectItem<
-                                                FilterAttributeValue>(
-                                            attribute, attribute.value ?? ''))
-                                        .toList();
-                                    return MultiSelectChipField<
-                                        FilterAttributeValue>(
-                                      items: _items ?? [],
-                                      scroll: false,
-                                      searchable: false,
-                                      showHeader: false,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1, color: Colors.white)),
-                                      itemBuilder: (item, state) {
-                                        return Card(
-                                          color: controller
-                                                  .selectedBrandAttribute
-                                                  .contains(item.value)
-                                              ? AppStyles.darkBlueColor
-                                              : Colors.white,
-                                          elevation: controller
-                                                  .selectedBrandAttribute
-                                                  .contains(item.value)
-                                              ? 5
-                                              : 3,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(5)),
-                                          ),
-                                          child: Container(
-                                            height: 30,
-                                            constraints:
-                                                BoxConstraints(maxWidth: 200),
-                                            child: MaterialButton(
-                                              onPressed: () async {
-                                                state.didChange(controller
-                                                    .selectedBrandAttribute);
-
-                                                if (controller
-                                                    .selectedBrandAttribute
-                                                    .contains(item.value)) {
-                                                  controller
-                                                      .selectedBrandAttribute
-                                                      .remove(item.value);
-
-                                                  await controller
-                                                      .removeBrandFilterAttribute(
-                                                    isColor: false,
-                                                    typeId: controller
-                                                        .brandAllData
-                                                        .value
-                                                        .attributes?[attIndex]
-                                                        .id
-                                                        .toString() ?? '',
-                                                    value: item.value,
-                                                  );
-
-                                                  await doFilter();
-                                                } else {
-                                                  controller
-                                                      .selectedBrandAttribute
-                                                      .add(item.value);
-                                                  await controller
-                                                      .addBrandFilterAttribute(
-                                                    isColor: false,
-                                                    typeId: controller
-                                                        .brandAllData
-                                                        .value
-                                                        .attributes?[attIndex]
-                                                        .id
-                                                        .toString() ?? '',
-                                                    value: item.value,
-                                                  );
-
-                                                  await doFilter();
-                                                }
-                                              },
-                                              child: Text(item.value.value ?? '',
-                                                  style: controller
-                                                          .selectedBrandAttribute
-                                                          .contains(item.value)
-                                                      ? AppStyles.kFontWhite14w5
-                                                      : AppStyles
-                                                          .kFontBlack14w5),
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  },
-                                )
-                              : Container(),
-                        ],
-                      );
-                    })
-                : Container(),
-
-            //Color
-            controller.brandAllData.value.color != null
-                ? (controller.brandAllData.value.color?.values?.length ?? 0) > 0
-                    ? Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
@@ -340,7 +210,7 @@ class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 15),
                             child: Text(
-                              'Color'.tr,
+                              '${controller.brandAllData.value.attributes?[attIndex].name}',
                               style: AppStyles.kFontBlack12w4,
                             ),
                           ),
@@ -348,111 +218,96 @@ class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
                             height: 5,
                           ),
                         ],
-                      )
-                    : Container()
-                : Container(),
-
-            controller.brandAllData.value.color != null
-                ? (controller.brandAllData.value.color?.values?.length ?? 0) > 0
-                    ? Builder(
+                      ),
+                      (controller.brandAllData.value.attributes?[attIndex].values?.length ?? 0) > 0
+                          ? Builder(
                         builder: (context) {
-                          final _items = controller
-                              .brandAllData.value.color?.values
-                              ?.map((attribute) =>
-                                  MultiSelectItem<FilterColorValue>(
-                                      attribute, attribute.value ?? ''))
+                          final _items = controller.brandAllData.value
+                              .attributes?[attIndex].values
+                              ?.map((attribute) => MultiSelectItem<
+                              FilterAttributeValue>(
+                              attribute, attribute.value ?? ''))
                               .toList();
-                          return MultiSelectChipField<FilterColorValue>(
+                          return MultiSelectChipField<
+                              FilterAttributeValue?>(
                             items: _items ?? [],
                             scroll: false,
                             searchable: false,
                             showHeader: false,
                             decoration: BoxDecoration(
-                                border:
-                                    Border.all(width: 1, color: Colors.white)),
+                                border: Border.all(
+                                    width: 1, color: Colors.white)),
                             itemBuilder: (item, state) {
-                              var bgColor = 0;
-                              if (item.value.value?.contains('#') == null) {
-                                bgColor = controller
-                                    .colourNameToHex(item.value.value);
-                              } else {
-                                bgColor =
-                                    controller.getBGColor(item.value.value ?? '');
-                              }
-                              return Container(
-                                height: 30,
-                                constraints: BoxConstraints(maxWidth: 200),
-                                child: GestureDetector(
-                                  onTap: () async {
-                                    state.didChange(
-                                        controller.selectedBrandColorValue);
-                                    if (controller.selectedBrandColorValue
-                                        .contains(item.value)) {
-                                      controller.selectedBrandColorValue
-                                          .remove(item.value);
-                                      await controller
-                                          .removeBrandFilterAttribute(
-                                        isColor: true,
-                                        typeId: controller
-                                            .brandAllData.value.color?.id
-                                            .toString() ?? '',
-                                        colorValue: item.value,
-                                      );
-                                      await doFilter();
-                                    } else {
-                                      controller.selectedBrandColorValue
-                                          .add(item.value);
+                              return Card(
+                                color: controller
+                                    .selectedBrandAttribute
+                                    .contains(item.value)
+                                    ? AppStyles.darkBlueColor
+                                    : Colors.white,
+                                elevation: controller
+                                    .selectedBrandAttribute
+                                    .contains(item.value)
+                                    ? 5
+                                    : 3,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                      Radius.circular(5)),
+                                ),
+                                child: Container(
+                                  height: 30,
+                                  constraints:
+                                  BoxConstraints(maxWidth: 200),
+                                  child: MaterialButton(
+                                    onPressed: () async {
+                                      state.didChange(controller
+                                          .selectedBrandAttribute);
 
-                                      await controller.addBrandFilterAttribute(
-                                        isColor: true,
-                                        typeId: controller
-                                            .brandAllData.value.color?.id
-                                            .toString() ?? '',
-                                        colorValue: item.value,
-                                      );
-                                      await doFilter();
-                                    }
-                                  },
-                                  child: Container(
-                                    width: 50,
-                                    height: 50,
-                                    child: Stack(
-                                      children: [
-                                        Positioned.fill(
-                                          child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 5),
-                                            margin: EdgeInsets.symmetric(
-                                                vertical: 2),
-                                            decoration: BoxDecoration(
-                                                color: Color(bgColor),
-                                                shape: BoxShape.circle,
-                                                border: Border.all(
-                                                  width: controller
-                                                          .selectedBrandColorValue
-                                                          .contains(item.value)
-                                                      ? 3
-                                                      : 0.1,
-                                                  color: controller
-                                                          .selectedBrandColorValue
-                                                          .contains(item.value)
-                                                      ? Colors.pink
-                                                      : Colors.black,
-                                                )),
-                                          ),
-                                        ),
-                                        controller.selectedBrandColorValue
-                                                .contains(item.value)
-                                            ? Center(
-                                                child: Icon(
-                                                  Icons.check,
-                                                  color: Colors.white,
-                                                  size: 18,
-                                                ),
-                                              )
-                                            : Container(),
-                                      ],
-                                    ),
+                                      if (controller
+                                          .selectedBrandAttribute
+                                          .contains(item.value)) {
+                                        controller
+                                            .selectedBrandAttribute
+                                            .remove(item.value);
+
+                                        await controller
+                                            .removeBrandFilterAttribute(
+                                          isColor: false,
+                                          typeId: controller
+                                              .brandAllData
+                                              .value
+                                              .attributes?[attIndex]
+                                              .id
+                                              .toString() ?? '',
+                                          value: item.value,
+                                        );
+
+                                        await doFilter();
+                                      } else {
+                                        controller
+                                            .selectedBrandAttribute
+                                            .add(item.value!);
+                                        await controller
+                                            .addBrandFilterAttribute(
+                                          isColor: false,
+                                          typeId: controller
+                                              .brandAllData
+                                              .value
+                                              .attributes?[attIndex]
+                                              .id
+                                              .toString() ?? '',
+                                          value: item.value,
+                                        );
+
+                                        await doFilter();
+                                      }
+                                    },
+                                    child: Text(item.value?.value ?? '',
+                                        style: controller
+                                            .selectedBrandAttribute
+                                            .contains(item.value)
+                                            ? AppStyles.kFontWhite14w5
+                                            : AppStyles
+                                            .kFontBlack14w5),
                                   ),
                                 ),
                               );
@@ -460,212 +315,362 @@ class _BrandFilterDrawerState extends State<BrandFilterDrawer> {
                           );
                         },
                       )
-                    : Container()
+                          : Container(),
+                    ],
+                  );
+                })
+                : Container(),
+
+            //Color
+            controller.brandAllData.value.color != null
+                ? (controller.brandAllData.value.color?.values?.length ?? 0) > 0
+                ? Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 5,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: AppStyles.textFieldFillColor,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    'Color'.tr,
+                    style: AppStyles.kFontBlack12w4,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+              ],
+            )
+                : Container()
+                : Container(),
+
+            controller.brandAllData.value.color != null
+                ? (controller.brandAllData.value.color?.values?.length ?? 0) > 0
+                ? Builder(
+              builder: (context) {
+                final _items = controller
+                    .brandAllData.value.color?.values
+                    ?.map((attribute) =>
+                    MultiSelectItem<FilterColorValue>(
+                        attribute, attribute.value ?? ''))
+                    .toList();
+                return MultiSelectChipField<FilterColorValue?>(
+                  items: _items ?? [],
+                  scroll: false,
+                  searchable: false,
+                  showHeader: false,
+                  decoration: BoxDecoration(
+                      border:
+                      Border.all(width: 1, color: Colors.white)),
+                  itemBuilder: (item, state) {
+                    // var bgColor = 0;
+                    // if (item.value?.value?.contains('#') == null) {
+                    //   bgColor = controller
+                    //       .colourNameToHex(item.value?.value);
+                    // } else {
+                    //   bgColor =
+                    //       controller.getBGColor(item.value?.value ?? '');
+                    //   // bgColor = controller
+                    //   //     .colourNameToHex(item.value?.value);
+                    // }
+                    return Container(
+                      height: 30,
+                      constraints: BoxConstraints(maxWidth: 200),
+                      child: GestureDetector(
+                        onTap: () async {
+                          state.didChange(
+                              controller.selectedBrandColorValue);
+                          if (controller.selectedBrandColorValue
+                              .contains(item.value)) {
+                            controller.selectedBrandColorValue
+                                .remove(item.value);
+                            await controller
+                                .removeBrandFilterAttribute(
+                              isColor: true,
+                              typeId: controller
+                                  .brandAllData.value.color?.id
+                                  .toString() ?? '',
+                              colorValue: item.value,
+                            );
+                            await doFilter();
+                          } else {
+                            controller.selectedBrandColorValue
+                                .add(item.value!);
+
+                            await controller.addBrandFilterAttribute(
+                              isColor: true,
+                              typeId: controller
+                                  .brandAllData.value.color?.id
+                                  .toString() ?? '',
+                              colorValue: item.value,
+                            );
+                            await doFilter();
+                          }
+                        },
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 5),
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 2),
+                                  decoration: BoxDecoration(
+                                    // color: Color(bgColor),
+                                      color: ColorUtils.stringToColor(item.value!.value!),
+                                      // color: Colors.white,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        width: controller
+                                            .selectedBrandColorValue
+                                            .contains(item.value)
+                                            ? 3
+                                            : 0.1,
+                                        color: controller
+                                            .selectedBrandColorValue
+                                            .contains(item.value)
+                                            ? Colors.pink
+                                            : Colors.black,
+                                      )),
+                                ),
+                              ),
+                              controller.selectedBrandColorValue
+                                  .contains(item.value)
+                                  ? Center(
+                                child: Icon(
+                                  Icons.check,
+                                  color: Colors.white,
+                                  size: 18,
+                                ),
+                              )
+                                  : Container(),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+            )
+                : Container()
                 : Container(),
 
             //Price Range
             showRange
                 ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Divider(
-                        height: 1,
-                        thickness: 1,
-                        color: AppStyles.textFieldFillColor,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15),
-                        child: Text(
-                          'Price Range'.tr +
-                              ' (${currencyController.appCurrency.value})',
-                          style: AppStyles.kFontBlack12w4,
-                        ),
-                      ),
-                    ],
-                  )
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 5,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: AppStyles.textFieldFillColor,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    'Price Range'.tr +
+                        ' (${currencyController.appCurrency.value})',
+                    style: AppStyles.kFontBlack12w4,
+                  ),
+                ),
+              ],
+            )
                 : Container(),
 
             showRange
                 ? Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
-                    child: FlutterSlider(
-                      values: [_lowerValue + 1, _upperValue - 1],
-                      min: controller.brandAllData.value.lowestPrice.toDouble(),
-                      max: controller.brandAllData.value.heightPrice.toDouble(),
-                      onDragCompleted:
-                          (handlerIndex, lowerValue, upperValue) async {
-                        print('UPPER $lowerValue LOWER $upperValue');
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: FlutterSlider(
+                values: [_lowerValue + 1, _upperValue - 1],
+                min: controller.brandAllData.value.lowestPrice.toDouble(),
+                max: controller.brandAllData.value.heightPrice.toDouble(),
+                onDragCompleted:
+                    (handlerIndex, lowerValue, upperValue) async {
+                  print('UPPER $lowerValue LOWER $upperValue');
 
-                        controller.lowRangeBrandCtrl.text =
-                            lowerValue.toString();
-                        controller.highRangeBrandCtrl.text =
-                            upperValue.toString();
+                  controller.lowRangeBrandCtrl.text =
+                      lowerValue.toString();
+                  controller.highRangeBrandCtrl.text =
+                      upperValue.toString();
 
-                        _lowerValue = lowerValue;
-                        _upperValue = upperValue;
+                  _lowerValue = lowerValue;
+                  _upperValue = upperValue;
 
-                        setState(() {});
+                  setState(() {});
 
-                        controller
-                            .dataFilterCat.value.filterDataFromCat?.filterType
-                            ?.forEach((element) {
-                          if (element.filterTypeId == 'price_range') {
-                            element.filterTypeValue?.clear();
-                            element.filterTypeValue?.add([
-                              controller.lowRangeBrandCtrl.text,
-                              controller.highRangeBrandCtrl.text,
-                            ]);
-                          }
-                        });
+                  controller
+                      .dataFilterCat.value.filterDataFromCat?.filterType
+                      ?.forEach((element) {
+                    if (element.filterTypeId == 'price_range') {
+                      element.filterTypeValue?.clear();
+                      element.filterTypeValue?.add([
+                        controller.lowRangeBrandCtrl.text,
+                        controller.highRangeBrandCtrl.text,
+                      ]);
+                    }
+                  });
 
-                        await doFilter();
-                      },
-                      rangeSlider: true,
-                      handler: FlutterSliderHandler(
-                        decoration: BoxDecoration(),
-                        child: Material(
-                          type: MaterialType.circle,
+                  await doFilter();
+                },
+                rangeSlider: true,
+                handler: FlutterSliderHandler(
+                  decoration: BoxDecoration(),
+                  child: Material(
+                    type: MaterialType.circle,
+                    color: AppStyles.pinkColor,
+                    elevation: 3,
+                    child: Container(
+                        child: Icon(
+                          Icons.circle,
+                          size: 25,
                           color: AppStyles.pinkColor,
-                          elevation: 3,
-                          child: Container(
-                              child: Icon(
-                            Icons.circle,
-                            size: 25,
-                            color: AppStyles.pinkColor,
-                          )),
-                        ),
-                      ),
-                      rightHandler: FlutterSliderHandler(
-                        decoration: BoxDecoration(),
-                        child: Material(
-                          type: MaterialType.circle,
+                        )),
+                  ),
+                ),
+                rightHandler: FlutterSliderHandler(
+                  decoration: BoxDecoration(),
+                  child: Material(
+                    type: MaterialType.circle,
+                    color: AppStyles.pinkColor,
+                    elevation: 3,
+                    child: Container(
+                        child: Icon(
+                          Icons.circle,
+                          size: 25,
                           color: AppStyles.pinkColor,
-                          elevation: 3,
-                          child: Container(
-                              child: Icon(
-                            Icons.circle,
-                            size: 25,
-                            color: AppStyles.pinkColor,
-                          )),
+                        )),
+                  ),
+                ),
+                trackBar: FlutterSliderTrackBar(
+                  inactiveTrackBar: BoxDecoration(
+                    color: AppStyles.mediumPinkColor,
+                    // border: Border.all(width: 3, color: Colors.blue),
+                  ),
+                  activeTrackBar: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: AppStyles.pinkColor,
+                  ),
+                ),
+                hatchMark: FlutterSliderHatchMark(
+                  disabled: true,
+                ),
+              ),
+            )
+                : Container(),
+
+            showRange
+                ? Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(children: [
+                Expanded(
+                  child: TextField(
+                    autofocus: false,
+                    controller: controller.lowRangeBrandCtrl,
+                    scrollPhysics: AlwaysScrollableScrollPhysics(),
+                    decoration: InputDecoration(
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                      hintText:
+                      '${_currentRangeValues?.start.round().toString()}',
+                      fillColor: AppStyles.appBackgroundColor,
+                      filled: true,
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(10),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppStyles.textFieldFillColor,
                         ),
                       ),
-                      trackBar: FlutterSliderTrackBar(
-                        inactiveTrackBar: BoxDecoration(
-                          color: AppStyles.mediumPinkColor,
-                          // border: Border.all(width: 3, color: Colors.blue),
-                        ),
-                        activeTrackBar: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          color: AppStyles.pinkColor,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppStyles.textFieldFillColor,
                         ),
                       ),
-                      hatchMark: FlutterSliderHatchMark(
-                        disabled: true,
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.red,
+                        ),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppStyles.textFieldFillColor,
+                        ),
+                      ),
+                      hintStyle:
+                      AppStyles.kFontGrey12w5.copyWith(fontSize: 13),
                     ),
-                  )
-                : Container(),
-
-            showRange
-                ? Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Row(children: [
-                      Expanded(
-                        child: TextField(
-                          autofocus: false,
-                          controller: controller.lowRangeBrandCtrl,
-                          scrollPhysics: AlwaysScrollableScrollPhysics(),
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.auto,
-                            hintText:
-                                '${_currentRangeValues?.start.round().toString()}',
-                            fillColor: AppStyles.appBackgroundColor,
-                            filled: true,
-                            isDense: true,
-                            contentPadding: EdgeInsets.all(10),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppStyles.textFieldFillColor,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppStyles.textFieldFillColor,
-                              ),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.red,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppStyles.textFieldFillColor,
-                              ),
-                            ),
-                            hintStyle:
-                                AppStyles.kFontGrey12w5.copyWith(fontSize: 13),
-                          ),
-                          style: AppStyles.kFontBlack13w5,
+                    style: AppStyles.kFontBlack13w5,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  ' - ',
+                  style: AppStyles.kFontBlack12w4,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: TextField(
+                    autofocus: false,
+                    controller: controller.highRangeBrandCtrl,
+                    scrollPhysics: AlwaysScrollableScrollPhysics(),
+                    decoration: InputDecoration(
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                      hintText:
+                      '${_currentRangeValues?.end.round().toString()}',
+                      fillColor: AppStyles.appBackgroundColor,
+                      filled: true,
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(10),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppStyles.textFieldFillColor,
                         ),
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        ' - ',
-                        style: AppStyles.kFontBlack12w4,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: TextField(
-                          autofocus: false,
-                          controller: controller.highRangeBrandCtrl,
-                          scrollPhysics: AlwaysScrollableScrollPhysics(),
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.auto,
-                            hintText:
-                                '${_currentRangeValues?.end.round().toString()}',
-                            fillColor: AppStyles.appBackgroundColor,
-                            filled: true,
-                            isDense: true,
-                            contentPadding: EdgeInsets.all(10),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppStyles.textFieldFillColor,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppStyles.textFieldFillColor,
-                              ),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.red,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppStyles.textFieldFillColor,
-                              ),
-                            ),
-                            hintStyle:
-                                AppStyles.kFontGrey12w5.copyWith(fontSize: 13),
-                          ),
-                          style: AppStyles.kFontBlack13w5,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppStyles.textFieldFillColor,
                         ),
                       ),
-                    ]),
-                  )
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.red,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppStyles.textFieldFillColor,
+                        ),
+                      ),
+                      hintStyle:
+                      AppStyles.kFontGrey12w5.copyWith(fontSize: 13),
+                    ),
+                    style: AppStyles.kFontBlack13w5,
+                  ),
+                ),
+              ]),
+            )
                 : Container(),
 
             SizedBox(
