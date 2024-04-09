@@ -18,13 +18,13 @@ class AppConfig {
   static const String assetPath = hostUrl + '/public';
 
   // static Color loginScreenBackgroundGradient1 = Color(0xffFF3566);
-  static Color loginScreenBackgroundGradient1 = Color(0xff549cff);
+  static Color loginScreenBackgroundGradient1 = Color(0xff475b3b);
 
   // static Color loginScreenBackgroundGradient2 = Color(0xffD7365C);
-  static Color loginScreenBackgroundGradient2 = Color(0xff549cff);
+  static Color loginScreenBackgroundGradient2 = Color(0xff475b3b);
 
   // static String appColorScheme = "#FF3364";
-  static String appColorScheme = "#549cff";
+  static String appColorScheme = "#475b3b";
 
   // static const String privacyPolicyUrl =
   //     'https://spn21.spondan.com/amazcart/privacy-policy';
