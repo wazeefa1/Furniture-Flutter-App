@@ -27,6 +27,10 @@ class SearchControllers extends GetxController {
         data: jsonEncode(body),
       );
 
+
+      print("URL:${URLs.LIVE_SEARCH}");
+      print("BODY:${jsonEncode(body)}");
+
       if (response.statusCode == 200) {
         isLoading(false);
 
